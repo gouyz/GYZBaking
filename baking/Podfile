@@ -1,0 +1,27 @@
+use_frameworks!
+platform :ios, "8.0"
+
+target 'baking' do
+
+pod 'SnapKit', '~> 3.0.2' ## 自动布局 https://github.com/SnapKit/SnapKit
+pod 'Alamofire', '~> 4.2.0' ## 网络请求, swift版的AFN  https://github.com/Alamofire/Alamofire
+pod 'Kingfisher', '~> 3.2.1' ## 轻量级的SDWebImage https://github.com/onevcat/Kingfisher
+
+pod 'SwiftyJSON'  ##JSON 解析类 https://github.com/SwiftyJSON/SwiftyJSON
+pod 'MJRefresh'    #快速集成下拉刷新、上拉更多 https://github.com/CoderMJLee/MJRefresh
+pod 'IQKeyboardManagerSwift', '~> 4.0.7' ## #解决键盘弹起遮挡 https://github.com/hackiftekhar/IQKeyboardManager
+pod 'MBProgressHUD', '~> 1.0.0' # 实现多种加载效果 https://github.com/jdg/MBProgressHUD
+pod 'LLCycleScrollView'  # 图片轮播 https://github.com/LvJianfeng/LLCycleScrollView
+pod 'Cosmos', '~> 8.0.2' # 星星评分 https://github.com/marketplacer/Cosmos
+pod 'DOPDropDownMenu-Enhanced', '~> 1.0.0' #下拉菜单 https://github.com/12207480/DOPDropDownMenu-Enhanced
+
+pod 'DKImagePickerController' #图片选择器 https://github.com/zhangao0086/DKImagePickerController
+pod 'SKPhotoBrowser' #图片浏览器 https://github.com/suzuki-0000/SKPhotoBrowser
+
+#pod 'ZLaunchAdVC' #启动页广告，切换rootViewController，支持LaunchImage和LaunchScreen.storyboard，支持GIF图片显示，支持视图过渡动画，支持本地图片显示 https://github.com/MQZHot/ZLaunchAdVC
+
+##高德地图
+pod 'AMapLocation-NO-IDFA' #无IDFA版定位 SDK
+pod 'AMap3DMap-NO-IDFA'
+pod 'AMapSearch-NO-IDFA'
+end
