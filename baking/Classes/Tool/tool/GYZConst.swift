@@ -87,6 +87,8 @@ let userDefaults = UserDefaults.standard
 let kBackgroundColor : UIColor = UIColor.UIColorFromRGB(valueRGB: 0xf4f4f4)
 /// 导航栏背景颜色
 let kNavBarColor : UIColor = UIColor.UIColorFromRGB(valueRGB: 0xffbb02)
+/// 红包背景颜色
+let kRedPacketBgColor : UIColor = UIColor.UIColorFromRGB(valueRGB: 0xe72625)
 /// 黑色字体颜色
 let kBlackFontColor : UIColor = UIColor.UIColorFromRGB(valueRGB: 0x212121)
 /// 深灰色字体颜色

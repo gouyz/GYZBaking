@@ -151,6 +151,21 @@ extension UIView {
         }
     }
     
+    
+    /// 指定某几个角为圆角
+    ///
+    /// - Parameters:
+    ///   - corners: 指定角[.bottomLeft,.bottomRight]
+    ///   - radii: 半径
+    func roundingCorners(byRoundingCorners corners: UIRectCorner, radius: CGFloat){
+        
+        let maskPath = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = self.bounds
+        maskLayer.path = maskPath.cgPath
+        self.layer.mask = maskLayer
+        
+    }
     /// view添加点击事件
     func addOnClickListener(target: Any, action: Selector) {
         let gr = UITapGestureRecognizer(target: target, action: action)

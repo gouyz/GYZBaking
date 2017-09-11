@@ -121,6 +121,7 @@
 		0A69BE631E8D25450098B3DF /* ETNavBarTransparent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A69BE621E8D25450098B3DF /* ETNavBarTransparent.swift */; };
 		0A69BE651E8D2C4D0098B3DF /* GYZOrderDetailaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A69BE641E8D2C4D0098B3DF /* GYZOrderDetailaVC.swift */; };
 		0A69BE671E8D2E2E0098B3DF /* GYZOrderDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A69BE661E8D2E2E0098B3DF /* GYZOrderDetailCell.swift */; };
+		0A73AF101F6629D7005FA7A3 /* GYZRedPacketListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A73AF0F1F6629D7005FA7A3 /* GYZRedPacketListView.swift */; };
 		0A77B49A1E87656C00EF39F5 /* GYZSendBusinessCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77B4991E87656C00EF39F5 /* GYZSendBusinessCell.swift */; };
 		0A78B5C51EE8DA7A00650514 /* GYZSelectReceivedGoodsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A78B5C41EE8DA7A00650514 /* GYZSelectReceivedGoodsVC.swift */; };
 		0A78B5C71EE8E8ED00650514 /* GYZSelectReceivedGoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A78B5C61EE8E8ED00650514 /* GYZSelectReceivedGoodsCell.swift */; };
@@ -407,6 +408,7 @@
 		0A69BE621E8D25450098B3DF /* ETNavBarTransparent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETNavBarTransparent.swift; sourceTree = "<group>"; };
 		0A69BE641E8D2C4D0098B3DF /* GYZOrderDetailaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYZOrderDetailaVC.swift; sourceTree = "<group>"; };
 		0A69BE661E8D2E2E0098B3DF /* GYZOrderDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYZOrderDetailCell.swift; sourceTree = "<group>"; };
+		0A73AF0F1F6629D7005FA7A3 /* GYZRedPacketListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYZRedPacketListView.swift; sourceTree = "<group>"; };
 		0A77B4991E87656C00EF39F5 /* GYZSendBusinessCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYZSendBusinessCell.swift; sourceTree = "<group>"; };
 		0A78B5C41EE8DA7A00650514 /* GYZSelectReceivedGoodsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYZSelectReceivedGoodsVC.swift; sourceTree = "<group>"; };
 		0A78B5C61EE8E8ED00650514 /* GYZSelectReceivedGoodsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYZSelectReceivedGoodsCell.swift; sourceTree = "<group>"; };
@@ -1066,6 +1068,7 @@
 				0AFC188C1E8297490032B9DF /* GYZLoadingView.swift */,
 				0A69BE521E8CE0F40098B3DF /* GYZNavBarView.swift */,
 				0A07F3AA1E93BF65008F00DD /* GYZSelectPayMethodView.swift */,
+				0A73AF0F1F6629D7005FA7A3 /* GYZRedPacketListView.swift */,
 			);
 			path = comView;
 			sourceTree = "<group>";
@@ -1225,24 +1228,24 @@
 				TargetAttributes = {
 					0AFC18321E8295F20032B9DF = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = WZ34FX7S74;
+						DevelopmentTeam = FPA9N9SK5A;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
 					0AFC18461E8295F20032B9DF = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = WZ34FX7S74;
+						DevelopmentTeam = FPA9N9SK5A;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0AFC18321E8295F20032B9DF;
 					};
 					0AFC18511E8295F20032B9DF = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = WZ34FX7S74;
+						DevelopmentTeam = FPA9N9SK5A;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0AFC18321E8295F20032B9DF;
 					};
@@ -1370,6 +1373,7 @@
 				0A0DFE4B1EBCB64C00FC9ED1 /* GYZContractUsVC.swift in Sources */,
 				0A252E7E1ED5C26D0051DF10 /* FSSegmentTitleView.m in Sources */,
 				0ACC24D71E952A610072CE9C /* GYZCategoryModel.swift in Sources */,
+				0A73AF101F6629D7005FA7A3 /* GYZRedPacketListView.swift in Sources */,
 				0A3BD42F1E92737D0087C558 /* GYZConmentPhotosView.swift in Sources */,
 				0A77B49A1E87656C00EF39F5 /* GYZSendBusinessCell.swift in Sources */,
 				0A78B5C91EE9263D00650514 /* GYZBuyNotesVC.swift in Sources */,
@@ -1575,11 +1579,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: ChangZhou San Mi Network Technology Co.,Ltd (WZ34FX7S74)";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = WZ34FX7S74;
+				DEVELOPMENT_TEAM = FPA9N9SK5A;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1627,11 +1631,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: ChangZhou San Mi Network Technology Co.,Ltd (WZ34FX7S74)";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = WZ34FX7S74;
+				DEVELOPMENT_TEAM = FPA9N9SK5A;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1658,10 +1662,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = baking/baking.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: ChangZhou San Mi Network Technology Co.,Ltd (WZ34FX7S74)";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = WZ34FX7S74;
+				DEVELOPMENT_TEAM = FPA9N9SK5A;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1699,10 +1702,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = baking/baking.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: ChangZhou San Mi Network Technology Co.,Ltd (WZ34FX7S74)";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = WZ34FX7S74;
+				DEVELOPMENT_TEAM = FPA9N9SK5A;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
