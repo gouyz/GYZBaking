@@ -76,6 +76,11 @@
 		0A2EDDB31E83AC480040E460 /* GYZMineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2EDDB21E83AC480040E460 /* GYZMineVC.swift */; };
 		0A2EDDB51E83C9CC0040E460 /* GYZUIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2EDDB41E83C9CC0040E460 /* GYZUIButton+Extension.swift */; };
 		0A2EDDB71E83D9470040E460 /* GYZRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2EDDB61E83D9470040E460 /* GYZRegisterVC.swift */; };
+		0A30FC821F67881800BC4789 /* GYZHomeRedPacketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A30FC811F67881700BC4789 /* GYZHomeRedPacketCell.swift */; };
+		0A30FC841F67C1D800BC4789 /* GYZMyRedPacketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A30FC831F67C1D800BC4789 /* GYZMyRedPacketVC.swift */; };
+		0A30FC861F67C23900BC4789 /* GYZMyRedPacketInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A30FC851F67C23900BC4789 /* GYZMyRedPacketInfoVC.swift */; };
+		0A30FC881F67C95600BC4789 /* GYZMyRedPacketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A30FC871F67C95600BC4789 /* GYZMyRedPacketCell.swift */; };
+		0A30FC8A1F67D86E00BC4789 /* GYZBusinessRedPacketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A30FC891F67D86E00BC4789 /* GYZBusinessRedPacketCell.swift */; };
 		0A3446EA1E8E654D006C5B8D /* GYZMineMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3446E91E8E654D006C5B8D /* GYZMineMessageVC.swift */; };
 		0A3446EC1E8E664F006C5B8D /* GYZMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3446EB1E8E664F006C5B8D /* GYZMessageCell.swift */; };
 		0A3446EE1E8E6E05006C5B8D /* GYZMineAboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3446ED1E8E6E05006C5B8D /* GYZMineAboutVC.swift */; };
@@ -361,6 +366,11 @@
 		0A2EDDB21E83AC480040E460 /* GYZMineVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYZMineVC.swift; sourceTree = "<group>"; };
 		0A2EDDB41E83C9CC0040E460 /* GYZUIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GYZUIButton+Extension.swift"; sourceTree = "<group>"; };
 		0A2EDDB61E83D9470040E460 /* GYZRegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYZRegisterVC.swift; sourceTree = "<group>"; };
+		0A30FC811F67881700BC4789 /* GYZHomeRedPacketCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYZHomeRedPacketCell.swift; sourceTree = "<group>"; };
+		0A30FC831F67C1D800BC4789 /* GYZMyRedPacketVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYZMyRedPacketVC.swift; sourceTree = "<group>"; };
+		0A30FC851F67C23900BC4789 /* GYZMyRedPacketInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYZMyRedPacketInfoVC.swift; sourceTree = "<group>"; };
+		0A30FC871F67C95600BC4789 /* GYZMyRedPacketCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYZMyRedPacketCell.swift; sourceTree = "<group>"; };
+		0A30FC891F67D86E00BC4789 /* GYZBusinessRedPacketCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYZBusinessRedPacketCell.swift; sourceTree = "<group>"; };
 		0A3446E91E8E654D006C5B8D /* GYZMineMessageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYZMineMessageVC.swift; sourceTree = "<group>"; };
 		0A3446EB1E8E664F006C5B8D /* GYZMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYZMessageCell.swift; sourceTree = "<group>"; };
 		0A3446ED1E8E6E05006C5B8D /* GYZMineAboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GYZMineAboutVC.swift; sourceTree = "<group>"; };
@@ -728,6 +738,8 @@
 				0A60BB041E9116440053E97E /* GYZBusinessProfileVC.swift */,
 				0A60BB0C1E912F9A0053E97E /* GYZMineConmentVC.swift */,
 				0A03EE061EBE10BE0091F213 /* GYZSelectAddressVC.swift */,
+				0A30FC831F67C1D800BC4789 /* GYZMyRedPacketVC.swift */,
+				0A30FC851F67C23900BC4789 /* GYZMyRedPacketInfoVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -760,6 +772,8 @@
 				0A60BB0A1E9118C30053E97E /* GYZImagesView.swift */,
 				0A60BB0E1E9133BD0053E97E /* GYZConmentCell.swift */,
 				0A60BB101E91366F0053E97E /* GYZMineConmentHeaderView.swift */,
+				0A30FC871F67C95600BC4789 /* GYZMyRedPacketCell.swift */,
+				0A30FC891F67D86E00BC4789 /* GYZBusinessRedPacketCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -917,6 +931,7 @@
 				0A0D21971ED88B2900AC38BA /* GYZShopGoodsSearchCell.swift */,
 				0A009E2B1F13BFE6003782A2 /* GYZCartView.swift */,
 				0A009E2D1F13C29F003782A2 /* GYZCartCell.swift */,
+				0A30FC811F67881700BC4789 /* GYZHomeRedPacketCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1356,6 +1371,8 @@
 			files = (
 				0A0A0E091EB0C9CB000EDA4E /* base64.m in Sources */,
 				0A86A5461E87FA7700150535 /* GYZCategoryCell.swift in Sources */,
+				0A30FC8A1F67D86E00BC4789 /* GYZBusinessRedPacketCell.swift in Sources */,
+				0A30FC861F67C23900BC4789 /* GYZMyRedPacketInfoVC.swift in Sources */,
 				0A0F6D0C1EA4A3A300F4BEE9 /* GYZGoodsDetailsVC.swift in Sources */,
 				0ACC24D51E951CD70072CE9C /* GYZHomeModel.swift in Sources */,
 				0A0DFE4D1EBCD2DA00FC9ED1 /* GYZContractTypeModel.swift in Sources */,
@@ -1383,6 +1400,7 @@
 				0A03DDCE1E96861E00839A92 /* GYZWebViewVC.swift in Sources */,
 				0A0A1F011E840F1B000CBAD7 /* GYZHomeTabbarView.swift in Sources */,
 				0A60BB071E91169A0053E97E /* GYZBusinessProfileCell.swift in Sources */,
+				0A30FC841F67C1D800BC4789 /* GYZMyRedPacketVC.swift in Sources */,
 				0A11050D1E9A7F060052A150 /* GYZShopGoodsModel.swift in Sources */,
 				0A07F3A71E9395A7008F00DD /* GYZPayAddressCell.swift in Sources */,
 				0AFC18B81E8297490032B9DF /* GYZUIViewControl+Empty.swift in Sources */,
@@ -1414,6 +1432,8 @@
 				0AFC18AB1E8297490032B9DF /* GYZScanQrcodeVC.swift in Sources */,
 				0AFC18A61E8297490032B9DF /* GYZLoginVC.swift in Sources */,
 				0AFC18BD1E8297490032B9DF /* GYZConst.swift in Sources */,
+				0A30FC881F67C95600BC4789 /* GYZMyRedPacketCell.swift in Sources */,
+				0A30FC821F67881800BC4789 /* GYZHomeRedPacketCell.swift in Sources */,
 				0A36EBE51E8D3E9300B1EEA1 /* GYZDetailsBusinessHeaderView.swift in Sources */,
 				0A3446EA1E8E654D006C5B8D /* GYZMineMessageVC.swift in Sources */,
 				0A0123981E854C2D00FC0128 /* GYZHomeHeaderView.swift in Sources */,

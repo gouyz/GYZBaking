@@ -46,6 +46,8 @@ class GYZHomeVC: GYZBaseVC,UITableViewDelegate,UITableViewDataSource,HomeMenuCel
         
         requestVersion()
         requestHomeData()
+        
+        showRedPacketView()
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,6 +56,13 @@ class GYZHomeVC: GYZBaseVC,UITableViewDelegate,UITableViewDataSource,HomeMenuCel
     }
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    /// 显示红包列表
+    func showRedPacketView(){
+        let redPacketView = GYZRedPacketListView()
+        
+        redPacketView.show()
     }
     
     /// 切换地址

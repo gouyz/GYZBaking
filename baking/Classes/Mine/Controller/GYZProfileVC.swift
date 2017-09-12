@@ -57,7 +57,7 @@ class GYZProfileVC: GYZBaseVC,UITableViewDelegate,UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -83,6 +83,8 @@ class GYZProfileVC: GYZBaseVC,UITableViewDelegate,UITableViewDataSource {
             cell.desLab.text = "修改"
         }else if indexPath.row == 3{
             cell.nameLab.text = "修改账户密码"
+        }else if indexPath.row == 4{
+            cell.nameLab.text = "红包"
         }
         
         cell.selectionStyle = .none
@@ -118,6 +120,8 @@ class GYZProfileVC: GYZBaseVC,UITableViewDelegate,UITableViewDataSource {
             modifyAccount(type: true)
         }else if indexPath.row == 3{//修改账号密码
             modifyAccount(type: false)
+        }else if indexPath.row == 4{//红包
+            goRedPacket()
         }
     }
 
@@ -131,6 +135,12 @@ class GYZProfileVC: GYZBaseVC,UITableViewDelegate,UITableViewDataSource {
         let modifyVC = GYZModifyAccountVC()
         modifyVC.isModifyAccount = type
         navigationController?.pushViewController(modifyVC, animated: true)
+    }
+    
+    /// 红包
+    func goRedPacket(){
+        let packetVC = GYZMyRedPacketVC()
+        navigationController?.pushViewController(packetVC, animated: true)
     }
     /// 选择头像
     func selectHeaderImg(){
