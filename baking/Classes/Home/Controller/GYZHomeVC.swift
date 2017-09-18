@@ -13,11 +13,13 @@ private let homeMenuCell = "homeMenuCell"
 private let homeCell = "homeCell"
 
 
-class GYZHomeVC: GYZBaseVC,UITableViewDelegate,UITableViewDataSource,HomeMenuCellDelegate,HomeCellDelegate,GYZHomeHeaderViewDelegate {
+class GYZHomeVC: GYZBaseVC,UITableViewDelegate,UITableViewDataSource,HomeMenuCellDelegate,HomeCellDelegate,GYZHomeHeaderViewDelegate,GYZRedPacketListViewDelegate {
     
     var address: String = ""
     
     var homeModel: GYZHomeModel?
+    
+    var redPacketmodels: [GYZRedPacketInfoModel] = [GYZRedPacketInfoModel]()
     
     /// 轮播图片URL
     var adsImgArr: [String] = []
@@ -46,8 +48,8 @@ class GYZHomeVC: GYZBaseVC,UITableViewDelegate,UITableViewDataSource,HomeMenuCel
         
         requestVersion()
         requestHomeData()
+        requestRedPacketData()
         
-        showRedPacketView()
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,7 +63,8 @@ class GYZHomeVC: GYZBaseVC,UITableViewDelegate,UITableViewDataSource,HomeMenuCel
     /// 显示红包列表
     func showRedPacketView(){
         let redPacketView = GYZRedPacketListView()
-        
+        redPacketView.delegate = self
+        redPacketView.dataModel = redPacketmodels
         redPacketView.show()
     }
     
@@ -172,6 +175,37 @@ class GYZHomeVC: GYZBaseVC,UITableViewDelegate,UITableViewDataSource,HomeMenuCel
             GYZLog(error)
         })
     }
+    ///获取红包列表数据
+    func requestRedPacketData(){
+        
+        weak var weakSelf = self
+        
+        GYZNetWork.requestNetwork("Index/indexCoupon", parameters :["user_id":"29866"/*userDefaults.string(forKey: "userId") ?? ""*/], success: { (response) in
+            
+            GYZLog(response)
+            if response["status"].intValue == kQuestSuccessTag{//请求成功
+                let data = response["result"]
+                guard let info = data["info"].array else { return }
+                
+                for item in info{
+                    guard let itemInfo = item.dictionaryObject else { return }
+                    let model = GYZRedPacketInfoModel.init(dict: itemInfo)
+                    
+                    weakSelf?.redPacketmodels.append(model)
+                }
+                
+                if weakSelf?.redPacketmodels.count > 0{
+                    weakSelf?.showRedPacketView()
+                }
+                
+            }else{
+                MBProgressHUD.showAutoDismissHUD(message: response["result"]["msg"].stringValue)
+            }
+            
+        }, failture: { (error) in
+            GYZLog(error)
+        })
+    }
     
     /// 设置轮播数据
     func setAdsData(){
@@ -234,14 +268,14 @@ class GYZHomeVC: GYZBaseVC,UITableViewDelegate,UITableViewDataSource,HomeMenuCel
         case 1://购物商城
             goWait()
         case 2:// 配方教学
-            goWait()
+            goWebVC(type: "2")
         case 3:// 成/半成品
             goWait()
             
         case 4://积分商城
             goWait()
         case 5:// 求职招聘
-            goWait()
+            goWebVC(type: "1")
         case 6:// 烘焙集市
             goWait()
             
@@ -254,6 +288,12 @@ class GYZHomeVC: GYZBaseVC,UITableViewDelegate,UITableViewDataSource,HomeMenuCel
     
     func goWait(){
         MBProgressHUD.showAutoDismissHUD(message: "敬请期待...")
+    }
+    /// 1求职招聘 2配方教学
+    func goWebVC(type:String){
+        let webVC = GYZWebViewVC()
+        webVC.url = "http://hp.0519app.com/Home/Article/articleList?type=" + type
+        navigationController?.pushViewController(webVC, animated: true)
     }
     
     // 同城配送
@@ -293,9 +333,15 @@ class GYZHomeVC: GYZBaseVC,UITableViewDelegate,UITableViewDataSource,HomeMenuCel
     
     ///MARK GYZHomeHeaderViewDelegate
     func didClickedBannerView(index: Int) {
-        //let webVC = GYZWebViewVC()
-        //webVC.url = adsLinkArr[index]
-        //navigationController?.pushViewController(webVC, animated: true)
+//        let webVC = GYZWebViewVC()
+//        webVC.url = adsLinkArr[index]
+//        navigationController?.pushViewController(webVC, animated: true)
+    }
+    
+    ///MARK: GYZRedPacketListViewDelegate
+    func didClickedMyRedPacket() {
+        let redPacketVC = GYZMyRedPacketVC()
+        navigationController?.pushViewController(redPacketVC, animated: true)
     }
     /// 搜索商品
     func didSearchView() {
@@ -366,3 +412,4 @@ class GYZHomeVC: GYZBaseVC,UITableViewDelegate,UITableViewDataSource,HomeMenuCel
     }
     
 }
+

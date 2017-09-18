@@ -10,6 +10,26 @@ import UIKit
 
 class GYZBusinessRedPacketCell: UITableViewCell {
 
+    /// 填充数据
+    var dataModel : GYZRedPacketInfoModel?{
+        didSet{
+            if let model = dataModel {
+                //设置数据
+                let discount: Int = Int.init(Double.init(model.discount_amount!)!)
+                let str = "￥\(discount)"
+                let price : NSMutableAttributedString = NSMutableAttributedString(string: str)
+                price.addAttribute(NSFontAttributeName, value: k13Font, range: NSMakeRange(0, 1))
+                
+                moneyLab.attributedText = price
+                
+                nameLab.text = model.company_name
+                contentLab.text = model.title//"满\(Int.init(Double.init(model.use_amount!)!))元可用"
+                
+                dateLab.text = "有效期至" + (model.end_time?.getDateTime(format: "yyyy.MM.dd"))!
+            }
+        }
+    }
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         

@@ -9,6 +9,27 @@
 import UIKit
 
 class GYZMyRedPacketCell: UITableViewCell {
+    
+    /// 填充数据
+    var dataModel : GYZRedPacketInfoModel?{
+        didSet{
+            if let model = dataModel {
+                //设置数据
+                let discount: Int = Int.init(Double.init(model.discount_amount!)!)
+                let str = "￥\(discount)"
+                let price : NSMutableAttributedString = NSMutableAttributedString(string: str)
+                price.addAttribute(NSFontAttributeName, value: k13Font, range: NSMakeRange(0, 1))
+                
+                moneyLab.attributedText = price
+                
+                nameLab.text = model.company_name
+                contentLab.text = model.title//"满\(Int.init(Double.init(model.use_amount!)!))元可用"
+                
+                dateLab.text = "有效期至" + (model.end_time?.getDateTime(format: "yyyy.MM.dd"))!
+                userLab.text = "仅限\(model.phone!)使用"
+            }
+        }
+    }
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -40,7 +61,7 @@ class GYZMyRedPacketCell: UITableViewCell {
         moneyLab.snp.makeConstraints { (make) in
             make.left.equalTo(kMargin)
             make.top.equalTo(bgImgView)
-            make.size.equalTo(CGSize.init(width: 100, height: 50))
+            make.size.equalTo(CGSize.init(width: 150, height: 50))
         }
         
         nameLab.snp.makeConstraints { (make) in

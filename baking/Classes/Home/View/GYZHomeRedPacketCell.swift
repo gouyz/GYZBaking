@@ -9,6 +9,23 @@
 import UIKit
 
 class GYZHomeRedPacketCell: UITableViewCell {
+    
+    /// 填充数据
+    var dataModel : GYZRedPacketInfoModel?{
+        didSet{
+            if let model = dataModel {
+                //设置数据
+                let discount: Int = Int.init(Double.init(model.discount_amount!)!)
+                let str = "￥\(discount)"
+                let price : NSMutableAttributedString = NSMutableAttributedString(string: str)
+                price.addAttribute(NSFontAttributeName, value: k13Font, range: NSMakeRange(0, 1))
+                
+                moneyLab.attributedText = price
+                
+                contentLab.text = "满\(Int.init(Double.init(model.use_amount!)!))元可用"
+            }
+        }
+    }
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -65,13 +82,6 @@ class GYZHomeRedPacketCell: UITableViewCell {
             make.height.equalTo(20)
         }
         
-        
-        let str = "￥100"
-        let price : NSMutableAttributedString = NSMutableAttributedString(string: str)
-        price.addAttribute(NSFontAttributeName, value: k13Font, range: NSMakeRange(0, 1))
-//        price.addAttribute(NSForegroundColorAttributeName, value: kRedFontColor, range: NSMakeRange(str.characters.count-2, 2))
-        
-        moneyLab.attributedText = price
     }
     //左侧背景
     var leftBgImgView:  UIImageView = UIImageView.init(image: UIImage.init(named: "icon_redpacket_cell_bg"))

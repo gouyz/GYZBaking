@@ -12,8 +12,8 @@ class GYZMyRedPacketVC: GYZBaseVC {
 
     let titleArr : [String] = ["我的红包", "商家红包"]
     
-    /// 订单状态
-    var stateValue : [String] = ["0","1"]
+    /// type=1签约优惠券；0商家优惠券
+    var stateValue : [String] = ["1","0"]
     var scrollPageView: ScrollPageView?
     
     override func viewDidLoad() {
@@ -30,7 +30,7 @@ class GYZMyRedPacketVC: GYZBaseVC {
         for index in 0 ..< titleArr.count{
             
             let vc = GYZMyRedPacketInfoVC()
-            vc.redPacketType = Int(stateValue[index])!
+            vc.redPacketType = stateValue[index]
             childVC.append(vc)
         }
         

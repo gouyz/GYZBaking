@@ -8,10 +8,25 @@
 
 import UIKit
 
+
+protocol GYZRedPacketListViewDelegate : NSObjectProtocol {
+    func didClickedMyRedPacket()
+}
+
+
+
 private let homeRedPacketCell = "homeRedPacketCell"
 
 class GYZRedPacketListView: UIView {
 
+    /// 代理变量
+    weak var delegate : GYZRedPacketListViewDelegate?
+    /// 填充数据
+    var dataModel : [GYZRedPacketInfoModel]?{
+        didSet{
+            listTableView.reloadData()
+        }
+    }
     // MARK: 生命周期方法
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -232,6 +247,8 @@ class GYZRedPacketListView: UIView {
     /// 查看我的红包
     func clickedMyRedPacketBtn(){
         
+        delegate?.didClickedMyRedPacket()
+        hide()
     }
 }
 
@@ -240,7 +257,10 @@ extension GYZRedPacketListView : UITableViewDelegate,UITableViewDataSource{
     // MARK: - UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
     
-        return 3
+        if dataModel == nil {
+            return 0
+        }
+        return (dataModel?.count)!
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -248,6 +268,7 @@ extension GYZRedPacketListView : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: homeRedPacketCell) as! GYZHomeRedPacketCell
+        cell.dataModel = dataModel?[indexPath.section]
         return cell
         
     }
@@ -263,3 +284,5 @@ extension GYZRedPacketListView : UITableViewDelegate,UITableViewDataSource{
 //        return kMargin
 //    }
 }
+
+
